@@ -55,5 +55,7 @@ public class a047CheckNoisPrimeOrNot {
             System.out.println("n is not prime");
         }
     }
-    }
+   
+   sc.close();}
+
 }
