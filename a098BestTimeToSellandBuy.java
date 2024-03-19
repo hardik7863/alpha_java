@@ -8,10 +8,26 @@
 
 import java.util.Arrays;
 
-public class a098BestTimeToSellandBuy {
+public class a098BestTimeToSellandBuy {  
+    public static int buyAndSellStocks(int price []){
+        int buyPrice =Integer.MAX_VALUE;
+        int maxProfit=0;
+        for (int i = 0; i < price.length; i++) {
+            if (buyPrice<price[i]) { //profit
+                int profit=price[i]-buyPrice; //today's profit
+                maxProfit=Math.max(maxProfit,profit);
+                
+            }
+            else{
+                buyPrice=price[i];
+
+            }
+        }
+        return maxProfit;
+    }
     
 
-    //my Way:-
+    // //my Way:-
     // public static void main(String[] args) {
     //     int price[] ={7,1,5,3,6,4};
     //     int minprice=price[0];
@@ -24,5 +40,9 @@ public class a098BestTimeToSellandBuy {
     //     profit[i]=price[i]-minprice;
     //     }
     //     System.out.println("maxprofit will be "+Arrays.stream(profit).max().getAsInt());
-    // }
-}
+  //}  
+    
+    public static void main(String[] args) {
+    int price[]={7,1,5,3,6,4};
+    System.out.println(buyAndSellStocks(price));
+}};
